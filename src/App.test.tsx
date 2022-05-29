@@ -18,15 +18,15 @@ describe('Using the testing library of react ', () => {
 
 describe('Using the snapshot', () => {
 	test('it tests that the app renders correctly  ', () => {
-		const tree = ReactTestRenderer.create(<App />).toJSON();
+    const tree = ReactTestRenderer.create(<App />).toJSON();
 		console.log('tree', tree);
 		expect(tree).toMatchSnapshot();
 	});
 });
 
 describe('Using axios mock', () => {
-	test('the ApiCall returns the fav language from github call', async () => {
-		const mockedAxios = axios as jest.Mocked<typeof axios>;
+  const mockedAxios = axios as jest.Mocked<typeof axios>;
+  test('the ApiCall returns the fav language from github call', async () => {
 		mockedAxios.get.mockImplementationOnce(() =>
 			Promise.resolve(mockResponseAxios)
 		);
