@@ -5,7 +5,7 @@ const ApiCall = async (username: string) => {
 		console.log('apicall started');
 		const  data  = await axios.get(
 			`https://api.github.com/users/${username}/repos?per_page=200`
-		).then(response=>response.data)
+		).then(response=>response.data);
                 // console.log('DATTTA',data);
 		return gatherLanguages(data);
 	} catch (error) {
